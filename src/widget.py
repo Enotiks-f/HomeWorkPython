@@ -1,0 +1,16 @@
+from src import masks
+
+def mask_account_card(acc: str) -> str:
+    number = ''
+    name_card  = ''
+    for i in acc:
+        if i.isdigit() == True:
+            number += i
+        else:
+            name_card += i
+
+    if name_card == 'Счет ':
+        name_card += masks.get_mask_account(number)
+    else:
+        name_card += masks.get_mask_card_number(number)
+    return name_card
