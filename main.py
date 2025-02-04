@@ -1,10 +1,9 @@
-from src import widget
-from src import processing
+from src import processing, widget
 
-#input_card = input()
-#date_input = input()
-#print(widget.mask_account_card(input_card))
-#print(widget.get_date(date_input))
+input_card = input()
+date_input = input()
+print(widget.mask_account_card(input_card))
+print(widget.get_date(date_input))
 
 transactions = [
                          {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
