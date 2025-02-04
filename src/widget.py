@@ -1,5 +1,6 @@
 from src import masks
 
+
 def mask_account_card(acc: str) -> str:
     number = ''
     name_card = ''
@@ -13,6 +14,7 @@ def mask_account_card(acc: str) -> str:
     else:
         name_card += masks.get_mask_card_number(number)
     return name_card
+
 
 def get_date(date: str) -> str:
     date_format = f"{date[8:10]}.{date[5:7]}.{date[:4]}"
