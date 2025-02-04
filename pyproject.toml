@@ -1,7 +1,7 @@
 [project]
 name = "skypro"
 version = "0.1.0"
-description = "
+description = ""
 authors = [
     {name = "Your Name",email = "you@example.com"}
 ]
