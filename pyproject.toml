@@ -1,7 +1,7 @@
 [project]
 name = "skypro"
 version = "0.1.0"
-description = "
+description = ""
 authors = [
     {name = "Your Name",email = "you@example.com"}
 ]
@@ -20,6 +20,10 @@ flake8 = "^7.1.1"
 black = "^24.10.0"
 isort = "^5.13.2"
 mypy = "^1.14.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^6.0.0"
 
 [tool.black]
 # Максимальная длина строки
