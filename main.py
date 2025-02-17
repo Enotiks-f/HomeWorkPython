@@ -1,5 +1,3 @@
-from mypy.stubgen import generate_stubs
-
 from src import processing, widget, generators
 
 input_card = input()

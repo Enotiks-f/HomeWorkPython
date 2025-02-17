@@ -1,13 +1,12 @@
-from email.generator import Generator
 from typing import Dict, List, Any, Generator
 
-def filter_by_currency(transact: List[Dict[str, Any]], currency: str = "USD") -> Generator:
-    for i in transact:
+def filter_by_currency(transaction: List[Dict[str, Any]], currency: str = "USD") -> Generator:
+    for i in transaction:
         if i["operationAmount"]["currency"]["code"] == currency:
             yield i
 
-def transaction_descriptions(transact: List[Dict[str, Any]]) -> Generator:
-    for i in transact:
+def transaction_descriptions(transaction: List[Dict[str, Any]]) -> Generator:
+    for i in transaction:
         yield i["description"]
 
 
