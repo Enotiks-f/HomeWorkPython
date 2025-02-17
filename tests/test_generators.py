@@ -1,8 +1,6 @@
 import pytest
 
-from src.generators import filter_by_currency, transaction_descriptions
-from tests.test_processing import sample_transactions
-
+from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 # Тест filter_by_currency
 
 @pytest.fixture()
@@ -52,6 +50,25 @@ def test_filter_by_currency_empty():
 
 # Тест transaction_descriptions
 
-def test_transaction_descriptions():
+@pytest.fixture()
+def list_tran2():
+    return  [
+        {"id": 1, "description": "Перевод организации"},
+        {"id": 2, "description": "Перевод с карты на карту"},
+        {"id": 3, "description": None},
+        {"id": 4, "description": ""},
+        {"id": 5, "description": "Перевод со счета на счет"},
+        {"id": 3}
+    ]
+def test_transaction_descriptions(list_tran2):
     """Тест """
+    res = list(transaction_descriptions(list_tran2))
+    assert res == ["Перевод организации", "Перевод с карты на карту", "Перевод со счета на счет"]
+
+
+
+@pytest.fixture()
+def number():
+    return
+def test_card_number_generator():
     pass

@@ -7,7 +7,9 @@ def filter_by_currency(transaction: List[Dict[str, Any]], currency: str = "USD")
 
 def transaction_descriptions(transaction: List[Dict[str, Any]]) -> Generator:
     for i in transaction:
-        yield i["description"]
+        description = i.get("description")
+        if description:
+            yield i["description"]
 
 
 def card_number_generator(first: int, last: int) -> Generator:
