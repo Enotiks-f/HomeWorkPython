@@ -16,6 +16,12 @@ pip install -r requirements.txt
 
 3. Используйте sort_by_date() для сортировки транзакций по дате.
 
+4. Функция card_number_generator(start, stop) создаёт номера карт в формате XXXX XXXX XXXX XXXX.
+
+5. Функция filter_by_currency(transactions, currency) возвращает только транзакции с указанной валютой.
+
+6. Функция transaction_descriptions(transactions) извлекает description из всех транзакций.
+
 ## Тестирование
 
 Проект включает тесты для проверки корректности работы функций. Тесты находятся в каталоге tests/ и используют pytest.
