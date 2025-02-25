@@ -1,4 +1,4 @@
-from src import generators, processing, widget
+from src import decorators, generators, processing, widget
 
 input_card = input()
 date_input = input()
@@ -71,3 +71,23 @@ for _ in range(5):
     print(next(descriptions))
 for card_number in generators.card_number_generator(1, 5):
     print(card_number)
+
+
+@decorators.log()
+def add(a, b):
+    return a + b
+
+
+@decorators.log("log.txt")
+def multi(a, b):
+    return a * b
+
+
+@decorators.log("log.txt")
+def div(a, b):
+    return a / b
+
+
+print(add(2, 5))
+print(multi(3, 7))
+
