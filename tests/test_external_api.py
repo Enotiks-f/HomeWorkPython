@@ -1,5 +1,4 @@
 from unittest.mock import patch
-
 from src.external_api import convert, total_amount
 
 
@@ -7,7 +6,14 @@ from src.external_api import convert, total_amount
 def test_convert(mock_get):
     mock_get.return_value.json.return_value = {"result": 100.0}
 
-    result = convert("RUB", "USD", 1.0)
+    transaction = {
+        "operationAmount": {
+            "currency": {"code": "USD"},
+            "amount": "50.0"
+        }
+    }
+
+    result = convert(transaction)
 
     mock_get.assert_called_once()
 
