@@ -2,21 +2,20 @@ import logging
 import json
 import os
 
+logger = logging.getLogger("transaction")
+logger.setLevel(logging.DEBUG)
+
+formater = logging.Formatter(
+    "%(asctime)s - $(name)s  - @(levelname)s - %(message)s"
+)
+
+file_handler = logging.FileHandler("logs/utils.log", mode='a', encoding='utf-8')
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formater)
+
+logger.addHandler(file_handler)
 
 def transactions(json_file):
-    logger = logging.getLogger("transaction")
-    logger.setLevel(logging.DEBUG)
-
-    formater = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    )
-
-    file_handler = logging.FileHandler("logs/utils.log", mode='a', encoding="utf-8")
-    file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(formater)
-
-    logger.addHandler(file_handler)
-
     if not os.path.isfile(json_file):
         logger.warning("Файл не найден: %s")
         return []
