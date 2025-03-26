@@ -5,22 +5,22 @@ import os
 logger = logging.getLogger("transaction")
 logger.setLevel(logging.DEBUG)
 
-formater = logging.Formatter(
-    "%(asctime)s - $(name)s  - @(levelname)s - %(message)s"
+formatter = logging.Formatter(
+    "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
-file_handler = logging.FileHandler("logs/utils.log", mode='a', encoding='utf-8')
+file_handler = logging.FileHandler("logs/utils.log", mode='w', encoding='utf-8')
 file_handler.setLevel(logging.DEBUG)
-file_handler.setFormatter(formater)
+file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
 
 def transactions(json_file):
     if not os.path.isfile(json_file):
-        logger.warning("Файл не найден: %s")
+        logger.error("Файл не найден: %s")
         return []
     if os.path.getsize(json_file) == 0:
-        logger.warning("Файл пуст: %s")
+        logger.error("Файл пуст: %s")
         return []
 
     try:
