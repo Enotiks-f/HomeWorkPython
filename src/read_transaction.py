@@ -3,12 +3,9 @@ import pandas as pd
 
 def reading_csv(csv_file):
     """Функция чтения csv файлов"""
-    transactions_list = []
     with open(csv_file, encoding="utf-8") as file:
         reader = csv.DictReader(file)
-        for row in reader:
-            transactions_list.append(row)
-    return transactions_list
+        return reader
 
 
 def reading_xlsx(xlsx_file):

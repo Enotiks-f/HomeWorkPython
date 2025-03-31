@@ -1,13 +1,15 @@
 [project]
 name = "skypro"
 version = "0.1.0"
-description = "
+description = ""
 authors = [
     {name = "Your Name",email = "you@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
 ]
 
 
