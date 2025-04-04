@@ -5,7 +5,7 @@ def reading_csv(csv_file):
     """Функция чтения csv файлов"""
     with open(csv_file, encoding="utf-8") as file:
         reader = csv.DictReader(file, delimiter=";")
-        return reader
+        return list(reader)
 
 
 def reading_xlsx(xlsx_file):
